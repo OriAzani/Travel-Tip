@@ -50,11 +50,19 @@ document.querySelector('.my-location-btn').addEventListener('click', (ev) => {
                 .then(res => {
                     console.log(res);
 
+<<<<<<< HEAD
                     var temp = (res.main.temp - 273).toFixed(2)
                     var minTemp = (res.main.temp_min - 273).toFixed(2)
                     var maxTemp = (res.main.temp_max - 273).toFixed(2)
                     var windSpeed = res.wind.speed
                     var weatherInfo = `<span>${temp}</span> temperature from ${minTemp} to ${maxTemp} C, wind ${windSpeed} m/s. `
+=======
+                    var temp = (res.main.temp-273).toFixed(2)
+                    var minTemp = (res.main.temp_min - 273).toFixed(2)
+                    var maxTemp = (res.main.temp_max - 273).toFixed(2)
+                    var windSpeed = res.wind.speed
+                    var weatherInfo =  `<span>${temp}</span> temperature from ${minTemp} to ${maxTemp} C, wind ${windSpeed} m/s. `
+>>>>>>> 92a468c237708a38f35873562fe5c7f51e069824
                     console.log(weatherInfo);
                     document.querySelector('.weather-info').innerHTML = weatherInfo
                 })

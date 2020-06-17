@@ -5,9 +5,7 @@ export const mapService = {
     getAddressName
 }
 
-
 var map;
-
 
 function initMap(lat = 32.0749831, lng = 34.9120554) {
     console.log('InitMap');
@@ -53,8 +51,12 @@ function _connectGoogleApi() {
     })
 }
 
+<<<<<<< HEAD
 
 function getAddressName(pos) {
+=======
+function getAddressName(pos){
+>>>>>>> 92a468c237708a38f35873562fe5c7f51e069824
 
     return axios.get(` https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.coords.latitude},${pos.coords.longitude}&key=AIzaSyD68KV0_jBq9co6oqrz2LeC70sB4Iu-UaQ`)
         .then(pos => {

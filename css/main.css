@@ -2,6 +2,9 @@ body {
     background-color: lightyellow;
     text-align: center;
 }
+header{
+    
+}
 
 button {
     border: 0;
@@ -12,6 +15,7 @@ button {
     margin: 3px;
 }
 
+<<<<<<< HEAD
 
 /* .map {} */
 
@@ -30,4 +34,9 @@ button {
 
 .flex.space-between {
     justify-content: space-between;
+=======
+/* FLEX */
+.flex{
+    display: flex;
+>>>>>>> 92a468c237708a38f35873562fe5c7f51e069824
 }
