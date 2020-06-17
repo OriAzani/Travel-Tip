@@ -35,13 +35,17 @@ document.querySelector('.my-location-btn').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
     locService.getPosition()
         .then(pos => {
-             console.log(pos)
+            console.log(pos)
             mapService.panTo(pos.coords.latitude, pos.coords.longitude);
             mapService.addMarker({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-            fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyC5PQRy3g0RF1dODi4z8AwJ3bfxQ4lmJ-g')
-            .then(pos => {
-                console.log(pos)
+            mapService.getAddressName(pos)
+            .then(res => {
+                console.log(res);
+                var strHtml = res;
+                document.querySelector('.address-name').innerText = strHtml
+                
+            })
         })
-        })
+       
 
 })

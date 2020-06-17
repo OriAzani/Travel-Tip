@@ -2,7 +2,8 @@
 export const mapService = {
     initMap,
     addMarker,
-    panTo
+    panTo,
+    getAddressName
 }
 
 
@@ -40,9 +41,10 @@ function panTo(lat, lng) {
 
 function _connectGoogleApi() {
     if (window.google) return Promise.resolve()
-    const API_KEY = 'AIzaSyC5PQRy3g0RF1dODi4z8AwJ3bfxQ4lmJ-g' ; //TODO: Enter your API Key
+    const API_KEY = 'AIzaSyD68KV0_jBq9co6oqrz2LeC70sB4Iu-UaQ' ; //TODO: Enter your API Key
     var elGoogleApi = document.createElement('script');
     elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
+    console.log( elGoogleApi.src)
     elGoogleApi.async = true;
     document.body.append(elGoogleApi);
 
@@ -53,4 +55,10 @@ function _connectGoogleApi() {
 }
 
 
+function getAddressName(pos){
 
+  return axios.get(` https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.coords.latitude},${pos.coords.longitude}&key=AIzaSyD68KV0_jBq9co6oqrz2LeC70sB4Iu-UaQ`)
+    .then(pos => {
+        return pos.data.results[0].formatted_address
+    })
+}
