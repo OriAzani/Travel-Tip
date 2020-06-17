@@ -1,4 +1,3 @@
-
 export const mapService = {
     initMap,
     addMarker,
@@ -17,9 +16,9 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
             console.log('google available');
             map = new google.maps.Map(
                 document.querySelector('#map'), {
-                center: { lat, lng },
-                zoom: 15
-            })
+                    center: { lat, lng },
+                    zoom: 15
+                })
             console.log('Map!', map);
         })
 }
@@ -41,10 +40,10 @@ function panTo(lat, lng) {
 
 function _connectGoogleApi() {
     if (window.google) return Promise.resolve()
-    const API_KEY = 'AIzaSyD68KV0_jBq9co6oqrz2LeC70sB4Iu-UaQ' ; //TODO: Enter your API Key
+    const API_KEY = 'AIzaSyD68KV0_jBq9co6oqrz2LeC70sB4Iu-UaQ'; //TODO: Enter your API Key
     var elGoogleApi = document.createElement('script');
     elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
-    console.log( elGoogleApi.src)
+    console.log(elGoogleApi.src)
     elGoogleApi.async = true;
     document.body.append(elGoogleApi);
 
@@ -55,10 +54,10 @@ function _connectGoogleApi() {
 }
 
 
-function getAddressName(pos){
+function getAddressName(pos) {
 
-  return axios.get(` https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.coords.latitude},${pos.coords.longitude}&key=AIzaSyD68KV0_jBq9co6oqrz2LeC70sB4Iu-UaQ`)
-    .then(pos => {
-        return pos.data.results[0].formatted_address
-    })
+    return axios.get(` https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.coords.latitude},${pos.coords.longitude}&key=AIzaSyD68KV0_jBq9co6oqrz2LeC70sB4Iu-UaQ`)
+        .then(pos => {
+            return pos.data.results[0].formatted_address
+        })
 }

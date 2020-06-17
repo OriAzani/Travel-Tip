@@ -9,11 +9,30 @@
 </head>
 
 <body>
-    <h1>Maps with Ori</h1>
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button class="btn">Click here</button>
-    <button class="my-location-btn">My Location</button>
+
+    <header class="flex space-between">
+        <h1>TravelTip</h1>
+        <button class="my-location-btn">My Location</button>
+        <button class="btn">Click here</button>
+
+    </header>
+
     <div class="address-name"></div>
+
+
+    <div class="container flex">
+        <div class="weather-container">
+            <h2>Weather Today</h2>
+            <div class="weather-info"></div>
+        </div>
+        <div class="map" id="map" style=" height: 350px; width: 350px;"></div>
+
+
+
+
+    </div>
+
+
     <script src="lib/axios.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
