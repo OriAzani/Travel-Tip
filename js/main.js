@@ -46,11 +46,11 @@ document.querySelector('.my-location-btn').addEventListener('click', (ev) => {
                     document.querySelector('.address-name').innerText = strHtml
 
                 })
-                axios.get(`api.openweathermap.org/data/2.5/weather?lat=32.0749831&lon=34.9120554&appid=98985ae11d7eeb84361c1b2570f2629f`)  
-                .then(pos => {
-                        console.log('weather print',pos.)
-                        // return pos.data.results[0].formatted_address
-                    })
+                // axios.get(`api.openweathermap.org/data/2.5/weather?lat=32.0749831&lon=34.9120554&appid=98985ae11d7eeb84361c1b2570f2629f`)  
+                // .then(pos => {
+                //         console.log('weather print',pos)
+                //         // return pos.data.results[0].formatted_address
+                //     })
         })
 
 
