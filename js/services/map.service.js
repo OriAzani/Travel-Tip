@@ -6,9 +6,7 @@ export const mapService = {
     getAddressName
 }
 
-
 var map;
-
 
 function initMap(lat = 32.0749831, lng = 34.9120554) {
     console.log('InitMap');
@@ -53,7 +51,6 @@ function _connectGoogleApi() {
         elGoogleApi.onerror = () => reject('Google script failed to load')
     })
 }
-
 
 function getAddressName(pos){
 
