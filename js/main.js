@@ -33,8 +33,10 @@ document.querySelector('.btn').addEventListener('click', (ev) => {
 document.querySelector('.my-location-btn').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
     locService.getPosition()
-    .then(pos => {
-        // console.log('User position is:', pos.coords.latitude, pos.coords.longitude);
-        mapService.panTo(pos.coords.latitude, pos.coords.longitude);
-    })
+        .then(pos => {
+            console.log(pos)
+            mapService.panTo(pos.coords.latitude, pos.coords.longitude);
+            mapService.addMarker({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        })
+
 })
